@@ -18,8 +18,20 @@ function Dash({ accent }: { accent: string }) {
 }
 
 const items = [
-  { t: "Your SaaS, launched", d: "Multi-tenant web apps with auth, billing and dashboards, built on a modern, scalable stack.", a: "linear-gradient(to top,#22d3ee,#8b5cf6)" },
-  { t: "AI-powered tooling", d: "Assistants, document processing and workflow automation embedded directly into your product or operations.", a: "linear-gradient(to top,#8b5cf6,#e879f9)" },
+  {
+    t: "Custom Quote Generator",
+    tag: "Bespoke client build",
+    d: "Quotes generated from a database catalogue of products available for rent or purchase. It sped up the client's workflow, let them produce quotations far faster, and replaced Excel with a more professional finish.",
+    a: "linear-gradient(to top,#22d3ee,#8b5cf6)",
+    href: undefined as string | undefined,
+  },
+  {
+    t: "MachineSafe.org",
+    tag: "AI-assisted platform",
+    d: "An AI-assisted platform for performing safety assessments of machinery and supporting CE marking.",
+    a: "linear-gradient(to top,#8b5cf6,#e879f9)",
+    href: "https://machinesafe.org",
+  },
 ];
 
 export default function Products() {
@@ -34,8 +46,14 @@ export default function Products() {
           <Reveal key={it.t} delay={i * 0.15}>
             <div className="glass rounded-2xl p-6 transition hover:border-neon-violet/50 hover:shadow-[0_0_50px_rgba(139,92,246,0.25)]">
               <Dash accent={it.a} />
-              <h3 className="mt-6 text-xl font-semibold">{it.t}</h3>
+              <p className="mt-6 font-mono text-xs uppercase tracking-widest text-neon-cyan">{it.tag}</p>
+              <h3 className="mt-2 text-xl font-semibold">{it.t}</h3>
               <p className="mt-2 text-white/60">{it.d}</p>
+              {it.href && (
+                <a href={it.href} target="_blank" rel="noopener noreferrer" className="mt-5 inline-block text-neon-magenta transition hover:text-neon-cyan">
+                  Visit MachineSafe.org &rarr;
+                </a>
+              )}
             </div>
           </Reveal>
         ))}
