@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -22,7 +23,10 @@ export const viewport: Viewport = { themeColor: "#05060d" };
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <body className="noise min-h-screen">{children}</body>
+      <body className="noise min-h-screen">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
