@@ -11,6 +11,14 @@ const steps = [
   { n: "04", t: "Measure the savings", d: "We track time and cost saved so the benefit is visible, not assumed." },
 ];
 
+const benefits = [
+  { t: "Saves time", d: "takes over repetitive tasks like enquiries, bookings, data entry and follow-ups." },
+  { t: "Always available", d: "customers get instant replies, even outside office hours." },
+  { t: "Cuts costs", d: "get more done without adding headcount." },
+  { t: "Fewer mistakes", d: "consistent handling means fewer errors and missed leads." },
+  { t: "Scales with you", d: "copes with busy periods without extra effort." },
+];
+
 export default function AIConsulting() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 70%", "end 60%"] });
@@ -26,6 +34,20 @@ export default function AIConsulting() {
             AI should not be a buzzword. We help small businesses cut through the noise, adopt the tools that matter and turn them into measurable savings in time and money.
           </p>
           <div className="glass mt-10 rounded-2xl p-6">
+            <h3 className="text-2xl font-semibold">Would you like an <span className="text-gradient">AI agent</span> for your business?</h3>
+            <p className="mt-3 text-white/65">
+              Contact us and we will help make it a reality. An AI agent is a digital team member that handles routine work for you, around the clock.
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-white/70">
+              {benefits.map((b) => (
+                <li key={b.t}><span className="font-semibold text-neon-cyan">{b.t}:</span> {b.d}</li>
+              ))}
+            </ul>
+            <a href="#contact" className="mt-6 inline-block rounded-full bg-gradient-to-r from-neon-cyan via-neon-violet to-neon-magenta px-6 py-3 text-sm font-medium text-black transition hover:shadow-[0_0_40px_rgba(139,92,246,0.6)]">
+              Talk to us about an AI agent
+            </a>
+          </div>
+          <div className="glass mt-6 rounded-2xl p-6">
             <p className="mb-4 font-mono text-xs uppercase tracking-widest text-white/50">Illustrative workflow</p>
             <div className="flex h-24 items-end gap-2">
               {Array.from({ length: 18 }).map((_, i) => (

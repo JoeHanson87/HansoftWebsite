@@ -22,7 +22,6 @@ export default function Contact() {
           <p className="mt-6 text-lg text-white/65">Tell us about your business and we will suggest where software or AI can help most.</p>
           <ul className="mt-8 space-y-3 text-white/80">
             <li><a href={`mailto:${EMAIL}`} className="hover:text-neon-cyan">{EMAIL}</a></li>
-            <li><a href="tel:07738902906" className="hover:text-neon-cyan">07738 902906</a></li>
             <li>Kent, United Kingdom</li>
           </ul>
         </Reveal>
