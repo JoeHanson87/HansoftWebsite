@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Reveal from "./Reveal";
+import ChatDemo from "./ChatDemo";
 
 const steps = [
   { n: "01", t: "Audit", d: "We map how your business runs today and where hours quietly disappear." },
@@ -48,12 +49,8 @@ export default function AIConsulting() {
             </a>
           </div>
           <div className="glass mt-6 rounded-2xl p-6">
-            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-white/50">Illustrative workflow</p>
-            <div className="flex h-24 items-end gap-2">
-              {Array.from({ length: 18 }).map((_, i) => (
-                <div key={i} className="w-full origin-bottom rounded-t bg-gradient-to-t from-neon-violet to-neon-cyan" style={{ height: `${30 + ((i * 37) % 70)}%`, animation: `bar ${2 + (i % 5) * 0.4}s ease-in-out ${i * 0.1}s infinite` }} />
-              ))}
-            </div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-white/50">Example AI chat</p>
+            <ChatDemo />
             <p className="mt-4 text-sm text-white/50">Less manual effort, more time for the work that grows your business.</p>
           </div>
         </Reveal>
